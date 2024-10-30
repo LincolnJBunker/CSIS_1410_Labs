@@ -38,6 +38,13 @@ public class Couch {
 		return material;
 	}
 	
+    /**
+     * Compares this Couch object with another object to check for equality.
+     * Two Couch objects are considered equal if they have the same color and material.
+     * 
+     * @param obj the object to compare with this Couch
+     * @return true if the two couches are equal, false otherwise
+     */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -53,6 +60,13 @@ public class Couch {
 		return this.color.equals(other.color) && this.material == other.material;
 	}
 	
+    /**
+     * Returns a string representation of the Couch object in the format:
+     * "Couch #RRGGBB material", where #RRGGBB is the hexadecimal color code,
+     * and material is the lowercase name of the material.
+     * 
+     * @return a string representation of the Couch object
+     */
 	@Override
 	public String toString() {
 		int red = color.getRed();
