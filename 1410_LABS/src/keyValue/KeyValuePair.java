@@ -2,7 +2,7 @@ package keyValue;
 
 import java.util.Objects;
 
-public class KeyValuePair<K, V> {
+public class KeyValuePair<K extends Comparable<K>, V> implements Comparable<KeyValuePair<K, V>> {
 	private K key;
 	private V value;
 	
@@ -56,6 +56,16 @@ public class KeyValuePair<K, V> {
 		
 	}
 	
-	
+
+    /**
+     * Compares this KeyValuePair with another KeyValuePair based on the key
+     * @param other the other KeyValuePair to compare with
+     * @return a negative integer, zero, or a positive integer as this KeyValuePair
+     *         is less than, equal to, or greater than the specified KeyValuePair
+     */
+    @Override
+    public int compareTo(KeyValuePair<K, V> other) {
+        return this.key.compareTo(other.key);
+    }
 
 }
